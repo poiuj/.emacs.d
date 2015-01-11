@@ -28,3 +28,4 @@
 (global-linum-mode +1)
 (global-prettify-symbols-mode +1)
 (setq uniquify-buffer-name-style 'forward)
+(cua-mode +1)
