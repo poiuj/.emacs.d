@@ -11,6 +11,16 @@
     (eval-print-last-sexp)))
 
 (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
+
+(setq my:el-get-packages
+      '(highlight-parentheses
+        paredit
+	init-paredit
+        slime
+        sticky-windows))
+
+(el-get 'sync my:el-get-packages)
+
 (el-get 'sync)
 
 (load-file "~/.emacs.d/clean-buffer.el")
