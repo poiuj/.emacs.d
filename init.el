@@ -13,9 +13,12 @@
 (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
 
 (setq my:el-get-packages
-      '(highlight-parentheses
+      '(cl-lib 
+        el-get
+        gotham-theme
+        highlight-parentheses
+        init-paredit
         paredit
-	init-paredit
         slime
         sticky-windows))
 
