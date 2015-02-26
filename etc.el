@@ -3,6 +3,7 @@
 ;;; frame appearance
 (when (window-system)
   (tool-bar-mode -1)
+  (menu-bar-mode -1)
   (setq initial-frame-alist '((fullscreen . maximized))))
 
 (setq inhibit-startup-screen +1)
@@ -22,6 +23,13 @@
 
 ;;; backup
 (setq make-backup-files nil)
+
+;;; allow narrow-to-region
+(put 'narrow-to-region 'disabled nil)
+
+;;; use paredit in non-standard modes
+(require 'slime 'paredit)
+(add-hook 'slime-paredit-mode (lambda () (paredit-mode +1)))
 
 ;;; other minor modes
 (global-hl-line-mode +1)
