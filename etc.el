@@ -38,3 +38,4 @@
 ;; (global-prettify-symbols-mode +1)
 (setq uniquify-buffer-name-style 'forward)
 (cua-mode +1)
+(show-paren-mode +1)
