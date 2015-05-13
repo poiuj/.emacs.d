@@ -5,5 +5,6 @@
 (slime-setup '(slime-fancy))
 
 (global-set-key (kbd "C-h C-y") 'slime-hyperspec-lookup)
+(global-set-key (kbd "C-M-e") 'slime-inspect)
 
 (add-hook 'slime-repl-mode-hook (lambda () (linum-mode -1)))
