@@ -8,3 +8,8 @@
 (global-set-key (kbd "C-M-e") 'slime-inspect)
 
 (add-hook 'slime-repl-mode-hook (lambda () (linum-mode -1)))
+
+;;; use paredit in slime repl if available
+
+(when (require 'paredit "paredit" t)
+  (add-hook 'slime-repl-mode-hook (lambda () (paredit-mode +1))))
