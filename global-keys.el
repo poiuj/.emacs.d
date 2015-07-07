@@ -20,3 +20,6 @@
 (global-set-key (kbd "C-x 9") 'sticky-window-keep-window-visible)
 
 (global-set-key (kbd "C-c n") 'my/clean-and-indent-buffer)
+
+(global-set-key (kbd "C-^") 'enlarge-window)
+(global-set-key (kbd "C-}") 'enlarge-window-horizontally)
