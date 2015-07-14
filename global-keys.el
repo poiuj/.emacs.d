@@ -23,3 +23,5 @@
 
 (global-set-key (kbd "C-^") 'enlarge-window)
 (global-set-key (kbd "C-}") 'enlarge-window-horizontally)
+
+(global-set-key (kbd "C-x p") 'my/pp-json)

@@ -26,7 +26,7 @@
 
 (el-get 'sync)
 
-(load-file "~/.emacs.d/clean-buffer.el")
+(load-file "~/.emacs.d/utils.el")
 (load-file "~/.emacs.d/global-keys.el")
 (load-file "~/.emacs.d/etc.el")
 (load-file "~/.emacs.d/init-predefined.el")
