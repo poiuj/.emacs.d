@@ -10,4 +10,15 @@
   (interactive)
   (if (mark)
       (json-pretty-print (region-beginning) (region-end))
-      (json-pretty-print (point-min) (point-max))))
+    (json-pretty-print (point-min) (point-max))))
+
+
+(defun my/escape-dbl-quotes ()
+  "Escapes double quotes in current region"
+  (interactive)
+  (save-excursion
+    (let ((start (region-beginning))
+          (end (1+ (region-end))))
+      (goto-char start)
+      (while (search-forward "\"" end t)
+        (replace-match "\\\"" nil t)))))
