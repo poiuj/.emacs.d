@@ -13,14 +13,17 @@
 (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
 
 (setq my:el-get-packages
-      '(cl-lib 
+      '(
+        cl-lib
         el-get
+        flex-mode
         gotham-theme
         highlight-parentheses
         init-paredit
         paredit
         slime
-        sticky-windows))
+        sticky-windows
+        ))
 
 (el-get 'sync my:el-get-packages)
 
