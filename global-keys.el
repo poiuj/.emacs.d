@@ -25,3 +25,9 @@
 (global-set-key (kbd "C-}") 'enlarge-window-horizontally)
 
 (global-set-key (kbd "C-x p") 'my/pp-json)
+
+;;; MAC OS X specific
+(when (eq system-type 'darwin)
+  (setq mac-command-modifier 'control)
+  (setq mac-option-modifier 'meta)
+  (setq mac-control-modifier 'super))
