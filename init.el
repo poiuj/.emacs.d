@@ -1,7 +1,6 @@
 ;;; ensure el-get is installed
 
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
-(setq el-get-user-package-directory "~/.emacs.d/el-get/el-get-init")
 
 (unless (require 'el-get nil 'noerror)
   (with-current-buffer
@@ -10,17 +9,12 @@
     (goto-char (point-max))
     (eval-print-last-sexp)))
 
+(setq el-get-user-package-directory "~/.emacs.d/el-get/el-get-init")
+
 (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
 
 (setq my:el-get-packages
-      '(cl-lib 
-        el-get
-        gotham-theme
-        highlight-parentheses
-        init-paredit
-        paredit
-        slime
-        sticky-windows))
+      '(cl-lib dash el-get exec-path-from-shell highlight-parentheses init-paredit magit paredit slime sticky-windows))
 
 (el-get 'sync my:el-get-packages)
 
