@@ -1,8 +1,8 @@
 ;;; init for slime
 
 (require 'slime)
-(setq inferior-lisp-program "/bin/sbcl")
-(slime-setup '(slime-fancy))
+(setq inferior-lisp-program (executable-find "sbcl"))
+(slime-setup '(slime-fancy slime-tramp))
 
 (global-set-key (kbd "C-h C-y") 'slime-hyperspec-lookup)
 (global-set-key (kbd "C-M-e") 'slime-inspect)
