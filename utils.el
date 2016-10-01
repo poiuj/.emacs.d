@@ -26,3 +26,14 @@
   ;; delete the last space
   (delete-backward-char 1)
   (forward-char))
+
+
+(defun my/escape-dbl-quotes ()
+  "Escapes double quotes in current region"
+  (interactive)
+  (save-excursion
+    (let ((start (region-beginning))
+          (end (1+ (region-end))))
+      (goto-char start)
+      (while (search-forward "\"" end t)
+        (replace-match "\\\"" nil t)))))
