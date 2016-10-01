@@ -1,1 +1,2 @@
 
+(load-theme 'misterioso t)
