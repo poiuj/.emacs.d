@@ -14,7 +14,7 @@
 (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
 
 (setq my:el-get-packages
-      '(cl-lib dash el-get exec-path-from-shell highlight-parentheses init-paredit magit paredit slime sticky-windows))
+      '(cl-lib csharp-mode dash el-get emacs-async exec-path-from-shell gradle-mode haskell-mode highlight-parentheses magit matlab-mode paredit s slime sticky-windows with-editor))
 
 (el-get 'sync my:el-get-packages)
 
