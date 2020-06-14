@@ -27,6 +27,8 @@
 
 (global-set-key (kbd "C-x p") 'my/pp-json)
 
+(global-set-key (kbd "s-w") 'backward-kill-sexp)
+
 ;;; MAC OS X specific
 (when (eq system-type 'darwin)
   (setq mac-command-modifier 'control)
