@@ -35,6 +35,5 @@
 (global-hl-line-mode +1)
 (global-linum-mode +1)
 (column-number-mode +1)
-;; (global-prettify-symbols-mode +1)
 (setq uniquify-buffer-name-style 'forward)
 (show-paren-mode +1)
