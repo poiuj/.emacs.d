@@ -15,6 +15,9 @@
 (global-set-key (kbd "C-s") 'isearch-forward-regexp)
 (global-set-key (kbd "C-r") 'isearch-backward-regexp)
 
+(global-set-key (kbd "C-M-%") 'query-replace)
+(global-set-key (kbd "M-%") 'query-replace-regexp)
+
 (global-set-key (kbd "C-x 0") 'sticky-window-delete-window)
 (global-set-key (kbd "C-x 1") 'sticky-window-delete-other-windows)
 (global-set-key (kbd "C-x 9") 'sticky-window-keep-window-visible)
