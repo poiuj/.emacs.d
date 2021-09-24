@@ -17,10 +17,6 @@
       mouse-wheel-follow-mouse 't
       mouse-wheel-scroll-amount '(1 ((shift) . 1)))
 
-;;; indent
-(setq-default indent-tabs-mode nil)
-(setq show-trailing-whitespace t)
-
 ;;; backup
 (setq make-backup-files nil)
 
