@@ -37,3 +37,18 @@
       (goto-char start)
       (while (search-forward "\"" end t)
         (replace-match "\\\"" nil t)))))
+
+(defun my/save-file-path (arg)
+  "Copy the current file path to kill ring, and save in the clipboard"
+  (interactive "P")
+  (let* ((full-file-path (if (equal major-mode 'dired-mode)
+                             default-directory
+                           (buffer-file-name)))
+         (filepath (if arg
+                       (file-name-nondirectory full-file-path)
+                     full-file-path)))
+    (when filepath
+      (with-temp-buffer
+        (insert filepath)
+        (clipboard-kill-ring-save (point-min) (point-max)))
+      (message filepath))))

@@ -32,6 +32,14 @@
 
 (global-set-key (kbd "s-w") 'backward-kill-sexp)
 
+(global-set-key (kbd "C-c m") 'magit-status)
+
+(global-set-key (kbd "C-c u") 'browse-url)
+
+(global-set-key (kbd "M-z") 'zap-up-to-char)
+
+(global-set-key (kbd "C-x M-w") 'my/save-file-path)
+
 ;;; MAC OS X specific
 (when (eq system-type 'darwin)
   (setq mac-command-modifier 'control)
