@@ -20,6 +20,9 @@
 ;;; backup
 (setq make-backup-files nil)
 
+;; autosave
+(setq auto-save-default nil)
+
 ;;; allow narrow-to-region
 (put 'narrow-to-region 'disabled nil)
 
