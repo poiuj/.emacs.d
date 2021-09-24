@@ -36,3 +36,5 @@
 (column-number-mode +1)
 (setq uniquify-buffer-name-style 'forward)
 (show-paren-mode +1)
+;; use ruby-end mode
+(add-hook 'ruby-mode-hook (lambda () (ruby-end-mode 1)))
