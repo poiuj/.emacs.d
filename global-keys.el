@@ -18,10 +18,6 @@
 (global-set-key (kbd "C-M-%") 'query-replace)
 (global-set-key (kbd "M-%") 'query-replace-regexp)
 
-(global-set-key (kbd "C-x 0") 'sticky-window-delete-window)
-(global-set-key (kbd "C-x 1") 'sticky-window-delete-other-windows)
-(global-set-key (kbd "C-x 9") 'sticky-window-keep-window-visible)
-
 (global-set-key (kbd "C-c n") 'my/clean-and-indent-buffer)
 (global-set-key (kbd "C-c q") 'my/escape-dbl-quotes)
 
@@ -32,13 +28,15 @@
 
 (global-set-key (kbd "s-w") 'backward-kill-sexp)
 
-(global-set-key (kbd "C-c m") 'magit-status)
-
 (global-set-key (kbd "C-c u") 'browse-url)
 
 (global-set-key (kbd "M-z") 'zap-up-to-char)
 
 (global-set-key (kbd "C-x M-w") 'my/save-file-path)
+
+(global-set-key (kbd "C-x M-u") 'my/upcase-last-sexp)
+
+(global-set-key (kbd "C-c s l") 'sort-lines)
 
 ;;; MAC OS X specific
 (when (eq system-type 'darwin)

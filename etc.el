@@ -26,15 +26,18 @@
 ;;; allow narrow-to-region
 (put 'narrow-to-region 'disabled nil)
 
-;;; use paredit in non-standard modes
-(require 'slime 'paredit)
-(add-hook 'slime-paredit-mode (lambda () (paredit-mode +1)))
-
 ;;; other minor modes
 (global-hl-line-mode +1)
-(global-linum-mode +1)
+(global-display-line-numbers-mode)
 (column-number-mode +1)
 (setq uniquify-buffer-name-style 'forward)
 (show-paren-mode +1)
+
+;; indent java
+(add-hook 'java-mode-hook (lambda () (c-set-offset 'arglist-intro '++)))
+
+;; do not add coding line in ruby files
+(setq ruby-insert-encoding-magic-comment nil)
+
 ;; use ruby-end mode
 (add-hook 'ruby-mode-hook (lambda () (ruby-end-mode 1)))

@@ -4,14 +4,12 @@
   (indent-region (point-min) (point-max))
   (whitespace-cleanup))
 
-
 (defun my/pp-json ()
   "Pretty print whole buffer or current region"
   (interactive)
   (if (mark)
       (json-pretty-print (region-beginning) (region-end))
       (json-pretty-print (point-min) (point-max))))
-
 
 (defun my/insert-installed-packages-list ()
   "Inserts quoted list of installed packages by el-get"
@@ -26,7 +24,6 @@
   ;; delete the last space
   (delete-backward-char 1)
   (forward-char))
-
 
 (defun my/escape-dbl-quotes ()
   "Escapes double quotes in current region"
@@ -52,3 +49,18 @@
         (insert filepath)
         (clipboard-kill-ring-save (point-min) (point-max)))
       (message filepath))))
+
+(defun my/start-org-mode ()
+  "Sets major mode to org-mode and inserts mode line"
+  (interactive)
+  (org-mode)
+  (insert "-*- mode: org -*-
+"))
+
+(defun my/upcase-last-sexp ()
+  "Upcases last sexp"
+  (interactive)
+  (save-excursion
+    (let ((end (point)))
+      (backward-sexp)
+      (upcase-region (point) end))))
