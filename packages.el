@@ -19,7 +19,7 @@
   (auto-package-update-maybe))
 
 (use-package magit
-  :bind ("C-c m" . 'magit-status))
+  :bind ("C-c m" . magit-status))
 
 (use-package paredit
   :config
