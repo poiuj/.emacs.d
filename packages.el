@@ -68,9 +68,12 @@
 
 (use-package org
   :ensure nil
+  :custom
+  (org-agenda-start-on-weekday 0)
   :bind
   (:map org-mode-map
-        ("C-c c" . org-table-blank-field))
+        ("C-c c" . org-table-blank-field)
+        ("C-c a" . org-agenda))
   :config
   (unbind-key "<M-right>" org-mode-map)
   (unbind-key "<M-left>" org-mode-map)
