@@ -1,8 +1,4 @@
 
-;; (load-theme 'misterioso t)
-;; (load-theme 'solarized-dark t)
-;; make the modeline high contrast
-;; (setq solarized-high-contrast-mode-line t)
 (load-theme 'monokai t)
 
 (menu-bar-mode -1)
@@ -13,7 +9,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(magit yasnippet-snippets multi-line lsp-pyright monokai-theme mustache-mode jq-mode multiple-cursors company company-mode solarized-theme typescript-mode lsp-mode rustic paredit auto-package-update use-package)))
+   '(magit yasnippet-snippets multi-line lsp-pyright monokai-theme mustache-mode jq-mode multiple-cursors company company-mode typescript-mode lsp-mode rustic paredit auto-package-update use-package)))
 ;; (custom-set-faces
 ;;  ;; custom-set-faces was added by Custom.
 ;;  ;; If you edit it by hand, you could mess it up, so be careful.
