@@ -8,6 +8,8 @@
 
 (setq inhibit-startup-screen +1)
 
+(add-hook 'window-size-change-functions #'my/adjust-font-size)
+
 ;;; scroll
 (setq redisplay-dont-pause t
       scroll-margin 1

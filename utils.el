@@ -64,3 +64,11 @@
     (let ((end (point)))
       (backward-sexp)
       (upcase-region (point) end))))
+
+(cl-defun my/adjust-font-size (&optional (frame (selected-frame)))
+  (let* ((attrs (frame-monitor-attributes frame))
+         (width (nth 2 (alist-get 'geometry attrs)))
+         (size (cond
+                ((eq width 1280) 20)
+                (t 22))))
+    (set-frame-font (format "Menlo %s" size))))
