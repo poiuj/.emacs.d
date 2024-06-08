@@ -8,6 +8,7 @@
 
 (setq inhibit-startup-screen +1)
 
+(load-theme 'monokai t)
 (add-hook 'window-size-change-functions #'my/adjust-font-size)
 
 ;;; scroll
@@ -27,6 +28,8 @@
 
 ;;; allow narrow-to-region
 (put 'narrow-to-region 'disabled nil)
+(put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
 
 ;;; other minor modes
 (global-hl-line-mode +1)
