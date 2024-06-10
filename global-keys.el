@@ -24,7 +24,7 @@
 (global-set-key (kbd "C-^") 'enlarge-window)
 (global-set-key (kbd "C-}") 'enlarge-window-horizontally)
 
-(global-set-key (kbd "C-x p") 'my/pp-json)
+(global-set-key (kbd "C-c p") 'my/pp-json)
 
 (global-set-key (kbd "s-w") 'backward-kill-sexp)
 
