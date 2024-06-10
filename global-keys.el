@@ -38,6 +38,8 @@
 
 (global-set-key (kbd "C-c s l") 'sort-lines)
 
+(keymap-global-set "C-x C-b" 'buffer-menu-other-window)
+
 ;;; MAC OS X specific
 (when (eq system-type 'darwin)
   (setq mac-command-modifier 'control)
