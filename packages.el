@@ -125,3 +125,13 @@
   :config
   (yas-reload-all)
   :hook (prog-mode . yas-minor-mode))
+
+(use-package vertico
+  :init
+  (vertico-mode))
+
+(use-package marginalia
+  :bind (:map minibuffer-local-map
+         ("M-A" . marginalia-cycle))
+  :init
+  (marginalia-mode))
