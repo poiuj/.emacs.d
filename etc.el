@@ -3,8 +3,8 @@
 ;;; frame appearance
 (when (window-system)
   (tool-bar-mode -1)
-  (menu-bar-mode -1)
   (setq initial-frame-alist '((fullscreen . maximized))))
+(menu-bar-mode -1)
 
 (setq inhibit-startup-screen +1)
 
