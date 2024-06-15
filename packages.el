@@ -32,11 +32,7 @@
   (unbind-key "<M-down>" paredit-mode-map)
   (unbind-key "M-?" paredit-mode-map))
 
-(use-package rustic
-  :config
-  (remove-hook 'rustic-mode-hook 'flycheck-mode)
-  :custom
-  (rustic-lsp-server 'rust-analyzer))
+(use-package flycheck)
 
 (use-package lsp-mode
   :custom
@@ -47,6 +43,12 @@
         ("C-c C-c ." . lsp-find-implementation)
         ("C-c C-c r" . lsp-rename))
   :hook (c-mode . lsp))
+
+(use-package rustic
+  :config
+  (push 'rustic-clippy flycheck-checkers)
+  :custom
+  (rustic-lsp-server 'rust-analyzer))
 
 (use-package lsp-pyright
   :hook (python . lsp))
