@@ -42,8 +42,6 @@
   :custom
   (lsp-enable-snippet nil)
   (lsp-idle-delay 0.5)
-  ;; rust
-  (lsp-rust-server 'rust-analyzer)
   :bind
   (:map lsp-mode-map
         ("C-c C-c ." . lsp-find-implementation)
