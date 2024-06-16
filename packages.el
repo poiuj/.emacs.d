@@ -125,8 +125,24 @@
   :init
   (vertico-mode))
 
+(use-package orderless
+  :custom
+  (completion-styles '(orderless basic))
+  (completion-category-override '((file (styles basic partial-completion)))))
+
 (use-package marginalia
   :bind (:map minibuffer-local-map
-         ("M-A" . marginalia-cycle))
+              ("M-A" . marginalia-cycle))
   :init
   (marginalia-mode))
+
+(use-package ag)
+
+(use-package consult
+  :bind (("C-x b" . consult-buffer)
+         ("C-x 4 b" . consult-buffer-other-window)
+         ("M-g g" . consult-goto-line)))
+
+(use-package git-gutter
+  :init
+  (global-git-gutter-mode +1))
