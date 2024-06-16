@@ -53,11 +53,6 @@
 (use-package lsp-pyright
   :hook (python . lsp))
 
-(use-package flymake
-  :bind
-  (:map flymake-mode-map
-        ("C-c f n" . flymake-goto-next-error)))
-
 (use-package company
   :custom
   (company-idle-delay 0.2)
