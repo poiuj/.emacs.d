@@ -145,7 +145,8 @@
          ("M-g M-g" . consult-goto-line)
          ("C-c c d" . consult-find)
          ("C-c c r" . consult-grep)
-         ("C-c c g" . consult-git-grep)))
+         ("C-c c g" . consult-git-grep)
+         ("C-c c m" . consult-mark)))
 
 (use-package git-gutter
   :init
