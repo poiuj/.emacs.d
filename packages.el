@@ -56,14 +56,13 @@
   :hook (python . lsp))
 
 (use-package company
-  :custom
-  (company-idle-delay 0.2)
+  :hook
+  (after-init . global-company-mode)
   :bind
-  (:map company-active-map
-	("C-n". company-select-next)
-	("C-p". company-select-previous)
-	("M-<". company-select-first)
-	("M->". company-select-last)))
+  (("C-?" . company-complete)
+   :map company-active-map
+   ("M-<" . company-select-first)
+   ("M->" . company-select-last)))
 
 (use-package org
   :ensure nil
