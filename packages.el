@@ -28,8 +28,10 @@
   (dolist (hook '(emacs-lisp-mode-hook
                   lisp-interaction-mode-hook))
     (add-hook hook #'paredit-mode))
+  ;; conflicts with windmove
   (unbind-key "<M-up>" paredit-mode-map)
   (unbind-key "<M-down>" paredit-mode-map)
+  ;; conflicts with xref find references
   (unbind-key "M-?" paredit-mode-map))
 
 (use-package flycheck)
@@ -40,8 +42,8 @@
   (lsp-idle-delay 0.5)
   :bind
   (:map lsp-mode-map
-        ("C-c C-c ." . lsp-find-implementation)
-        ("C-c C-c r" . lsp-rename))
+        ("C-c l ." . lsp-find-implementation)
+        ("C-c l r" . lsp-rename))
   :hook (c-mode . lsp))
 
 (use-package rustic
@@ -69,9 +71,9 @@
   (org-agenda-start-on-weekday 0)
   :bind
   (:map org-mode-map
-        ("C-c c" . org-table-blank-field)
         ("C-c a" . org-agenda))
   :config
+  ;; conflicts with windmove
   (unbind-key "<M-right>" org-mode-map)
   (unbind-key "<M-left>" org-mode-map)
   (unbind-key "<M-down>" org-mode-map)
@@ -95,13 +97,13 @@
 ;;; buff-menu mode
 (use-package tabulated-list
   :ensure nil
-  :bind
-  (:map Buffer-menu-mode-map
-        ("M-<right>" . nil)
-        ("M-<left>" . nil)))
+  :config
+  ;; conflicts with windmove
+  (unbind-key "M-<right>" Buffer-menu-mode-map)
+  (unbind-key "M-<left>" Buffer-menu-mode-map))
 
 (use-package multiple-cursors
-  :bind ("C-c l" . mc/edit-lines))
+  :bind ("C-c C-m l" . mc/edit-lines))
 
 (use-package jq-mode)
 
@@ -141,8 +143,7 @@
 (use-package consult
   :bind (("C-x b" . consult-buffer)
          ("C-x 4 b" . consult-buffer-other-window)
-         ("M-g g" . consult-goto-line)
-         ("M-g M-g" . consult-goto-line)
+         ([remap goto-line] . consult-goto-line)
          ("C-c c d" . consult-find)
          ("C-c c r" . consult-grep)
          ("C-c c g" . consult-git-grep)
