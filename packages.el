@@ -151,3 +151,8 @@
 (use-package git-gutter
   :init
   (global-git-gutter-mode +1))
+
+(use-package gdb-mi
+  :ensure nil
+  :custom
+  (gdb-many-windows t))
