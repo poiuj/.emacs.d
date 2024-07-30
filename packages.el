@@ -25,14 +25,13 @@
 
 (use-package paredit
   :config
-  (dolist (hook '(emacs-lisp-mode-hook
-                  lisp-interaction-mode-hook))
-    (add-hook hook #'paredit-mode))
   ;; conflicts with windmove
   (unbind-key "<M-up>" paredit-mode-map)
   (unbind-key "<M-down>" paredit-mode-map)
   ;; conflicts with xref find references
-  (unbind-key "M-?" paredit-mode-map))
+  (unbind-key "M-?" paredit-mode-map)
+  :hook
+  ((emacs-lisp-mode lisp-interaction-mode) . paredit-mode))
 
 (use-package flycheck)
 
