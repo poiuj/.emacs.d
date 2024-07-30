@@ -143,6 +143,7 @@
   :bind (("C-x b" . consult-buffer)
          ("C-x 4 b" . consult-buffer-other-window)
          ([remap goto-line] . consult-goto-line)
+         ("C-c c l" . consult-line)
          ("C-c c d" . consult-find)
          ("C-c c r" . consult-grep)
          ("C-c c g" . consult-git-grep)
