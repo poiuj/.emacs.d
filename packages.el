@@ -151,7 +151,12 @@
 
 (use-package git-gutter
   :init
-  (global-git-gutter-mode +1))
+  (global-git-gutter-mode +1)
+  :bind
+  ("C-x v =" . git-gutter:popup-hunk)
+  ("C-x v n" . git-gutter:next-hunk)
+  ("C-x v p" . git-gutter:previous-hunk)
+  ("C-x v s" . git-gutter:stage-hunk))
 
 (use-package gdb-mi
   :ensure nil
