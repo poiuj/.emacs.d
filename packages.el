@@ -111,8 +111,11 @@
 
 (use-package monokai-theme)
 
-(use-package ispell
-  :hook (text-mode . flyspell-mode))
+(use-package flyspell
+  :ensure nil
+  :hook
+  (text-mode
+   (prog-mode . flyspell-prog-mode)))
 
 (use-package yasnippet-snippets)
 
