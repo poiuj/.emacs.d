@@ -31,7 +31,7 @@
   ;; conflicts with xref find references
   (unbind-key "M-?" paredit-mode-map)
   :hook
-  ((emacs-lisp-mode lisp-interaction-mode) . paredit-mode))
+  (emacs-lisp-mode lisp-interaction-mode))
 
 (use-package flycheck)
 
@@ -52,6 +52,7 @@
   (rustic-lsp-server 'rust-analyzer))
 
 (use-package lsp-pyright
+  :after lsp-mode
   :hook (python . lsp))
 
 (use-package company
@@ -142,8 +143,8 @@
 (use-package ag)
 
 (use-package consult
-  :bind (("C-x b" . consult-buffer)
-         ("C-x 4 b" . consult-buffer-other-window)
+  :bind (([remap switch-to-buffer] . consult-buffer)
+         ([remap swith-to-buffer-other-window] . consult-buffer-other-window)
          ([remap goto-line] . consult-goto-line)
          ("C-c c l" . consult-line)
          ("C-c c d" . consult-find)
