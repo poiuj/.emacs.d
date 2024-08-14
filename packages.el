@@ -153,15 +153,30 @@
          ("C-c c m" . consult-mark)))
 
 (use-package git-gutter
+  :after (repeat magit)
   :init
   (global-git-gutter-mode +1)
   :bind
   ("C-x v =" . git-gutter:popup-hunk)
   ("C-x v n" . git-gutter:next-hunk)
   ("C-x v p" . git-gutter:previous-hunk)
-  ("C-x v s" . git-gutter:stage-hunk))
+  ("C-x v s" . git-gutter:stage-hunk)
+  ("C-x v r" . git-gutter:revert-hunk)
+  (:repeat-map my/git-gutter-repeat-map
+               ("n" . git-gutter:next-hunk)
+               ("p" . git-gutter:previous-hunk)
+               ("s" . git-gutter:stage-hunk)
+               ("r" . git-gutter:revert-hunk)
+               :exit
+               ("c" . magit-commit))
+  :custom
+  (git-gutter:ask-p nil))
 
 (use-package gdb-mi
   :ensure nil
   :custom
   (gdb-many-windows t))
+
+(use-package repeat
+  :ensure nil
+  :init (repeat-mode))
