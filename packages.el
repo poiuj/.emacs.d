@@ -46,6 +46,7 @@
   :hook (c-mode . lsp))
 
 (use-package rustic
+  :after flycheck
   :config
   (push 'rustic-clippy flycheck-checkers)
   :custom
