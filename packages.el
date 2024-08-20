@@ -20,6 +20,23 @@
   (setq auto-package-update-hide-results t)
   (auto-package-update-maybe))
 
+;;; Inspired by https://github.com/mickeynp/combobulate
+(use-package treesit
+  :ensure nil
+  :preface
+  (setq my/ts-grammars-config
+        '(((c . ("https://github.com/tree-sitter/tree-sitter-c" "v0.20.7")) . (c-mode . c-ts-mode))
+          ((cpp . ("https://github.com/tree-sitter/tree-sitter-cpp" "v0.22.3")) . (c++-mode . c++-ts-mode))))
+  (defun my/setup-ts-modes ()
+    (dolist (config my/ts-grammars-config)
+      (cl-destructuring-bind (grammar . mode-remap) config
+        (unless (treesit-language-available-p (car grammar))
+          (add-to-list 'treesit-language-source-alist grammar)
+          (treesit-install-language-grammar (car grammar)))
+        (add-to-list 'major-mode-remap-alist mode-remap))))
+  :config
+  (my/setup-ts-modes))
+
 (use-package magit
   :bind ("C-c m" . magit-status))
 
@@ -43,7 +60,7 @@
   (:map lsp-mode-map
         ("C-c l ." . lsp-find-implementation)
         ("C-c l r" . lsp-rename))
-  :hook (c-mode . lsp))
+  :hook ((c-mode c-ts-mode c++-mode c++-ts-mode) . lsp))
 
 (use-package rustic
   :after flycheck
