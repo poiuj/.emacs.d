@@ -156,7 +156,7 @@
 (use-package orderless
   :custom
   (completion-styles '(orderless basic))
-  (completion-category-override '((file (styles basic partial-completion)))))
+  (completion-category-overrides '((file (styles basic partial-completion)))))
 
 (use-package marginalia
   :bind (:map minibuffer-local-map
