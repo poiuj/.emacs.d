@@ -15,9 +15,10 @@
   (use-package-always-ensure t))
 
 (use-package auto-package-update
+  :custom
+  (auto-package-update-delete-old-versions t)
+  (auto-package-update-interval 14)
   :config
-  (setq auto-package-update-delete-old-versions t)
-  (setq auto-package-update-hide-results t)
   (auto-package-update-maybe))
 
 ;;; Inspired by https://github.com/mickeynp/combobulate
