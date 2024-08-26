@@ -89,6 +89,12 @@
   :bind
   (:map org-mode-map
         ("C-c a" . org-agenda))
+  (:repeat-map my/org-repeat-map
+               ("n" . org-next-visible-heading)
+               ("p" . org-previous-visible-heading)
+               ("f" . org-forward-heading-same-level)
+               ("b" . org-backward-heading-same-level)
+               ("<tab>" . org-cycle))
   :config
   ;; conflicts with windmove
   (unbind-key "<M-right>" org-mode-map)
