@@ -171,6 +171,7 @@
   :bind (([remap switch-to-buffer] . consult-buffer)
          ([remap swith-to-buffer-other-window] . consult-buffer-other-window)
          ([remap goto-line] . consult-goto-line)
+         ([remap imenu] . consult-imenu)
          ("C-c c l" . consult-line)
          ("C-c c d" . consult-find)
          ("C-c c r" . consult-grep)
