@@ -95,6 +95,10 @@
                ("p" . org-previous-visible-heading)
                ("f" . org-forward-heading-same-level)
                ("b" . org-backward-heading-same-level)
+               ("^" . org-up-element)
+               ("u" . org-up-element)
+               ("_" . org-down-element)
+               ("d" . org-down-element)
                ("<tab>" . org-cycle))
   :config
   ;; conflicts with windmove
