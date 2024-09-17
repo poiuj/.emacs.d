@@ -210,3 +210,10 @@
 (use-package repeat
   :ensure nil
   :init (repeat-mode))
+
+(use-package frame
+  :ensure nil
+  :bind
+  (:repeat-map my/frame-repeat-map
+               ("o" . other-frame)
+               ("0" . delete-frame)))
