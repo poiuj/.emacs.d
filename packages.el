@@ -10,7 +10,7 @@
 
 (require 'use-package)
 
-(use-package use-package-ensure
+(use-package use-package
   :custom
   (use-package-always-ensure t))
 
