@@ -72,7 +72,7 @@
 
 (use-package lsp-pyright
   :after lsp-mode
-  :hook (python . lsp))
+  :hook (python-mode . lsp))
 
 (use-package company
   :hook
