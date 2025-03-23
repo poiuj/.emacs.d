@@ -99,7 +99,8 @@
                ("u" . org-up-element)
                ("_" . org-down-element)
                ("d" . org-down-element)
-               ("<tab>" . org-cycle))
+               ("<tab>" . org-cycle)
+               ("SPC" . org-shiftright))
   :config
   ;; conflicts with windmove
   (unbind-key "<M-right>" org-mode-map)
