@@ -173,7 +173,7 @@
 
 (use-package consult
   :bind (([remap switch-to-buffer] . consult-buffer)
-         ([remap swith-to-buffer-other-window] . consult-buffer-other-window)
+         ([remap switch-to-buffer-other-window] . consult-buffer-other-window)
          ([remap goto-line] . consult-goto-line)
          ([remap imenu] . consult-imenu)
          ("C-c c l" . consult-line)
