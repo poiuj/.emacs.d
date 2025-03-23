@@ -217,3 +217,8 @@
   (:repeat-map my/frame-repeat-map
                ("o" . other-frame)
                ("0" . delete-frame)))
+;;; global stuff
+(use-package emacs
+  :ensure nil
+  :bind
+  ([remap buffer-menu-other-window] . ibuffer-other-window))
