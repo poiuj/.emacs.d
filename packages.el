@@ -217,6 +217,16 @@
   (:repeat-map my/frame-repeat-map
                ("o" . other-frame)
                ("0" . delete-frame)))
+
+(use-package smerge-mode
+  :ensure nil
+  :bind
+  (:repeat-map my/smerge-conflicts-map
+               ("n" . smerge-next)
+               ("p" . smerge-prev)
+               ("u" . smerge-keep-upper)
+               ("l" . smerge-keep-lower)))
+
 ;;; global stuff
 (use-package emacs
   :ensure nil
