@@ -228,6 +228,9 @@
                ("u" . smerge-keep-upper)
                ("l" . smerge-keep-lower)))
 
+(use-package avy
+  :bind ("M-j" . avy-goto-char-timer))
+
 ;;; global stuff
 (use-package emacs
   :ensure nil
