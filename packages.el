@@ -147,6 +147,11 @@
 
 (use-package flyspell
   :ensure nil
+  :bind (:map flyspell-mode-map
+         ;; Unbind keys that conflict with embark
+         ("C-," . nil)
+         ("C-;" . nil)
+         ("C-." . nil))
   :hook
   (text-mode
    (prog-mode . flyspell-prog-mode)))
@@ -230,8 +235,36 @@
                ("u" . smerge-keep-upper)
                ("l" . smerge-keep-lower)))
 
+(use-package embark
+  :init
+  (setq prefix-help-command #'embark-prefix-help-command)
+  :bind
+  (("C-." . embark-act)
+   ("C-;" . embark-dwim)
+   ("C-h B" . embark-bindings))
+  :config
+  ;; Hide the mode line of the Embark live/completions buffers
+  (add-to-list 'display-buffer-alist
+               '("\\`\\*Embark Collect \\(Live\\|Completions\\)\\*"
+                 nil
+                 (window-parameters (mode-line-format . none)))))
+
+(use-package embark-consult
+  :hook
+  (embark-collect-mode . consult-preview-at-point-mode))
+
 (use-package avy
-  :bind ("M-j" . avy-goto-char-timer))
+  :bind ("M-j" . avy-goto-char-2)
+  :config
+  (defun avy-action-embark (pt)
+    (unwind-protect
+        (save-excursion
+          (goto-char pt)
+          (embark-act))
+      (select-window
+       (cdr (ring-ref avy-ring 0))))
+    t)
+  (setf (alist-get ?. avy-dispatch-alist) 'avy-action-embark))
 
 ;;; global stuff
 (use-package emacs
