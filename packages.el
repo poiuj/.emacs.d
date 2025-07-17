@@ -21,6 +21,11 @@
   :config
   (auto-package-update-maybe))
 
+(use-package exec-path-from-shell
+  :if (eq window-system 'ns)
+  :config
+  (exec-path-from-shell-copy-env "PATH"))
+
 ;;; Inspired by https://github.com/mickeynp/combobulate
 (use-package treesit
   :ensure nil
