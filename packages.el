@@ -69,14 +69,12 @@
   :hook ((c-mode c-ts-mode c++-mode c++-ts-mode) . lsp))
 
 (use-package rustic
-  :after flycheck
   :config
   (push 'rustic-clippy flycheck-checkers)
   :custom
   (rustic-lsp-server 'rust-analyzer))
 
 (use-package lsp-pyright
-  :after lsp-mode
   :hook (python-mode . lsp))
 
 (use-package company
@@ -189,7 +187,6 @@
          ("C-c c m" . consult-mark)))
 
 (use-package git-gutter
-  :after (repeat magit)
   :init
   (global-git-gutter-mode +1)
   :bind
