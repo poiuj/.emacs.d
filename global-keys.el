@@ -1,5 +1,11 @@
 ;;; init for global keys
 
+;;; Make the following shortcuts work over a terminal. To work it
+;;; requires to configure the terminal emulator accordingly.
+(define-key input-decode-map "\e[100~" (kbd "C-."))
+(define-key input-decode-map "\e[101~" (kbd "C-;"))
+(define-key input-decode-map "\e[102~" (kbd "C-,"))
+
 (keymap-global-set "C-<down>" 'scroll-up-line)
 (keymap-global-set "C-<up>" 'scroll-down-line)
 
