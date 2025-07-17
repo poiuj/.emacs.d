@@ -1,9 +1,12 @@
-(load-file "~/.emacs.d/packages.el")
-(load-file "~/.emacs.d/utils.el")
-(load-file "~/.emacs.d/global-keys.el")
-(load-file "~/.emacs.d/etc.el")
-(load-file "~/.emacs.d/style.el")
-(load-file "~/.emacs.d/security.el")
+(dolist (file '(
+                "packages.el"
+                "utils.el"
+                "global-keys.el"
+                "etc.el"
+                "style.el"
+                "security.el"
+                ))
+  (load-file (expand-file-name file user-emacs-directory)))
 
-(setq custom-file "~/.emacs.d/custom.el")
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file)
