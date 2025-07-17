@@ -57,4 +57,4 @@
          (size (cond
                 ((eq width 1280) 18)
                 (t 22))))
-    (set-frame-font (format "Menlo %s" size))))
+    (set-frame-font (format "SF Mono %s" size))))
