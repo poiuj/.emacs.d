@@ -254,7 +254,7 @@
   (embark-collect-mode . consult-preview-at-point-mode))
 
 (use-package avy
-  :bind ("M-j" . avy-goto-char-2)
+  :bind ("M-j" . avy-goto-char)
   :config
   (defun avy-action-embark (pt)
     (unwind-protect
