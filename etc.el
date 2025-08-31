@@ -3,6 +3,7 @@
 ;;; frame appearance
 (when (window-system)
   (tool-bar-mode -1)
+  (global-window-tool-bar-mode -1)
   (scroll-bar-mode -1)
   (setq initial-frame-alist '((fullscreen . maximized))))
 (menu-bar-mode -1)
