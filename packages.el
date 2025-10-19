@@ -267,6 +267,9 @@
     t)
   (setf (alist-get ?. avy-dispatch-alist) 'avy-action-embark))
 
+(use-package ace-window
+  :bind ("M-o" . ace-window))
+
 ;;; global stuff
 (use-package emacs
   :ensure nil
