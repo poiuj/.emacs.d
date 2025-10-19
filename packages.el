@@ -233,7 +233,8 @@
                ("n" . smerge-next)
                ("p" . smerge-prev)
                ("u" . smerge-keep-upper)
-               ("l" . smerge-keep-lower)))
+               ("l" . smerge-keep-lower)
+               ("a" . smerge-keep-all)))
 
 (use-package embark
   :init
