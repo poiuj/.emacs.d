@@ -34,8 +34,6 @@
 
 (keymap-global-set "s-w" 'backward-kill-sexp)
 
-(keymap-global-set "C-c u" 'browse-url)
-
 (keymap-global-set "M-z" 'zap-up-to-char)
 
 (keymap-global-set "C-x M-w" 'my/save-file-path)
