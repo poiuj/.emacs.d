@@ -52,15 +52,14 @@
   :bind ("C-c m" . magit-status))
 
 (use-package paredit
-  :config
-  ;; conflicts with xref find references
-  (unbind-key "M-?" paredit-mode-map)
   :hook
   (emacs-lisp-mode lisp-interaction-mode))
 
 (use-package flycheck)
 
 (use-package lsp-mode
+  :init
+  (setq lsp-keymap-prefix "C-c l")
   :custom
   (lsp-enable-snippet nil)
   (lsp-idle-delay 0.5)
