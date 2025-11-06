@@ -12,12 +12,6 @@
 (keymap-global-set "C-<left>" 'left-word)
 (keymap-global-set "C-<right>" 'right-word)
 
-(keymap-global-set "C-`" 'other-window)
-(keymap-global-set "M-<up>" 'windmove-up)
-(keymap-global-set "M-<down>" 'windmove-down)
-(keymap-global-set "M-<left>" 'windmove-left)
-(keymap-global-set "M-<right>" 'windmove-right)
-
 (keymap-global-set "C-s" 'isearch-forward-regexp)
 (keymap-global-set "C-r" 'isearch-backward-regexp)
 

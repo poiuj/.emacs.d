@@ -53,9 +53,6 @@
 
 (use-package paredit
   :config
-  ;; conflicts with windmove
-  (unbind-key "<M-up>" paredit-mode-map)
-  (unbind-key "<M-down>" paredit-mode-map)
   ;; conflicts with xref find references
   (unbind-key "M-?" paredit-mode-map)
   :hook
@@ -108,13 +105,7 @@
                ("_" . org-down-element)
                ("d" . org-down-element)
                ("TAB" . org-cycle)
-               ("SPC" . org-shiftright))
-  :config
-  ;; conflicts with windmove
-  (unbind-key "<M-right>" org-mode-map)
-  (unbind-key "<M-left>" org-mode-map)
-  (unbind-key "<M-down>" org-mode-map)
-  (unbind-key "<M-up>" org-mode-map))
+               ("SPC" . org-shiftright)))
 
 (use-package typescript-mode
   :custom
@@ -130,14 +121,6 @@
   :bind
   (:map emacs-lisp-mode-map
         ("M-?" . xref-find-references)))
-
-;;; buff-menu mode
-(use-package tabulated-list
-  :ensure nil
-  :config
-  ;; conflicts with windmove
-  (unbind-key "M-<right>" Buffer-menu-mode-map)
-  (unbind-key "M-<left>" Buffer-menu-mode-map))
 
 (use-package multiple-cursors
   :bind ("C-c C-m l" . mc/edit-lines))
