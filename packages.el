@@ -26,6 +26,11 @@
   :config
   (exec-path-from-shell-copy-env "PATH"))
 
+(use-package which-key
+  :ensure nil
+  :config
+  (which-key-mode 1))
+
 ;;; Inspired by https://github.com/mickeynp/combobulate
 (use-package treesit
   :ensure nil
