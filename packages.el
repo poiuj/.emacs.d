@@ -192,6 +192,9 @@
          ("C-c c g" . consult-git-grep)
          ("C-c c m" . consult-mark)))
 
+(use-package consult-lsp
+  :after (lsp consult))
+
 (use-package git-gutter
   :init
   (global-git-gutter-mode +1)
