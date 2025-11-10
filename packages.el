@@ -59,15 +59,18 @@
 
 (use-package lsp-mode
   :init
+  (defun my/lsp-mode-setup-completion ()
+    (add-to-list 'completion-category-overrides
+                 '(lsp-capf (styles orderless))))
   (setq lsp-keymap-prefix "C-c l")
   :custom
   (lsp-enable-snippet nil)
   (lsp-idle-delay 0.5)
-  :bind
-  (:map lsp-mode-map
-        ("C-c l ." . lsp-find-implementation)
-        ("C-c l r" . lsp-rename))
-  :hook ((c-mode c-ts-mode c++-mode c++-ts-mode) . lsp))
+  (lsp-completion-provider :none)
+  :hook (((c-mode c-ts-mode c++-mode c++-ts-mode) . lsp)
+         (lsp-completion-mode . my/lsp-mode-setup-completion)
+         (lsp-mode . lsp-enable-which-key-integration))
+  :commands lsp)
 
 (use-package rustic
   :config
@@ -78,14 +81,20 @@
 (use-package lsp-pyright
   :hook (python-mode . lsp))
 
-(use-package company
+(use-package corfu
+  :config
+  (global-corfu-mode 1)
+  :custom
+  (corfu-auto t)
+  (corfu-quit-no-match 'separator)
   :hook
-  (after-init . global-company-mode)
-  :bind
-  (("C-?" . company-complete)
-   :map company-active-map
-   ("M-<" . company-select-first)
-   ("M->" . company-select-last)))
+  (corfu-mode . corfu-popupinfo-mode))
+
+(use-package corfu-terminal
+  :defer t
+  :after corfu
+  :unless (display-graphic-p (selected-frame))
+  :config (corfu-terminal-mode 1))
 
 (use-package org
   :ensure nil
@@ -157,7 +166,8 @@
 (use-package orderless
   :custom
   (completion-styles '(orderless basic))
-  (completion-category-overrides '((file (styles basic partial-completion)))))
+  (completion-category-overrides '((file (styles basic partial-completion))))
+  (completion-category-defaults nil))
 
 (use-package marginalia
   :bind (:map minibuffer-local-map
