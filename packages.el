@@ -79,7 +79,11 @@
   (rustic-lsp-server 'rust-analyzer))
 
 (use-package lsp-pyright
-  :hook (python-mode . lsp))
+  :init
+  (defun my/init-lsp-pyright ()
+    (require 'lsp-pyright)
+    (lsp-deferred))
+  :hook (python-mode . my/init-lsp-pyright))
 
 (use-package corfu
   :config
