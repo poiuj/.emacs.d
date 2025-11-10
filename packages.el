@@ -278,4 +278,9 @@
 (use-package emacs
   :ensure nil
   :bind
-  ([remap buffer-menu-other-window] . ibuffer-other-window))
+  ([remap buffer-menu-other-window] . ibuffer-other-window)
+  ("C-x r a" . string-insert-rectangle) ; a for append
+  :custom
+  (tab-always-indent 'complete)
+  (text-mode-ispell-word-completion nil)
+  (read-extended-command-predicate #'command-completion-default-include-p))
