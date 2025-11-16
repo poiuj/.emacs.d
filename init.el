@@ -1,7 +1,6 @@
 (dolist (file '(
-                "packages.el"
                 "utils.el"
-                "global-keys.el"
+                "packages.el"
                 "etc.el"
                 "style.el"
                 "security.el"

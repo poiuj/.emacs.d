@@ -292,10 +292,43 @@
 (use-package emacs
   :ensure nil
   :bind
-  ([remap buffer-menu-other-window] . ibuffer-other-window)
-  ("C-x r a" . string-insert-rectangle) ; a for append
+  ([remap isearch-forward] . isearch-forward-regexp)
+  ([remap isearch-backward] . isearch-backward-regexp)
+  ([remap query-replace] . query-replace-regexp)
+
+  ("C-^" . enlarge-window)
+  ("C-}" . enlarge-window-horizontally)
+
+  ("C-x r a" . string-insert-rectangle)
+
+  ([remap zap-to-char] . zap-up-to-char)
+
+  ("C-c l s" . sort-lines)
+  ("C-c l d" . delete-duplicate-lines)
+
+  ;; my utilities
+  ("C-c M-w" . my/save-file-path)
+  ("C-c M-u" . my/upcase-last-sexp)
+  ("C-c n" . my/clean-and-indent-buffer)
+
   :custom
   (tab-always-indent 'complete)
   (text-mode-ispell-word-completion nil)
   (read-extended-command-predicate #'command-completion-default-include-p)
-  (read-file-name-completion-ignore-case t))
+  (read-file-name-completion-ignore-case t)
+
+  :config
+  ;; Make the following shortcuts work over a terminal. To work it
+  ;; requires to configure the terminal emulator accordingly.
+  (define-key input-decode-map "\e[100~" (kbd "C-."))
+  (define-key input-decode-map "\e[101~" (kbd "C-;"))
+  (define-key input-decode-map "\e[102~" (kbd "C-,"))
+)
+
+(use-package emacs
+  :ensure nil
+  :if (eq system-type 'darwin)
+  :custom
+  (ns-command-modifier 'control)
+  (ns-option-modifier 'meta)
+  (ns-control-modifier 'super))
