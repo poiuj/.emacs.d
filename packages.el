@@ -86,9 +86,8 @@
   :hook (python-mode . my/init-lsp-pyright))
 
 (use-package corfu
-  :config
-  (global-corfu-mode 1)
   :custom
+  (global-corfu-mode t)
   (corfu-auto t)
   (corfu-quit-no-match 'separator)
   :hook
@@ -99,6 +98,21 @@
   :after corfu
   :unless (display-graphic-p (selected-frame))
   :config (corfu-terminal-mode 1))
+
+(use-package cape
+  :bind ("C-c p" . cape-prefix-map)
+  :init
+  (add-hook 'completion-at-point-functions #'cape-dabbrev)
+  (add-hook 'completion-at-point-functions #'cape-file))
+
+(use-package dabbrev
+  :ensure nil
+  :config
+  (add-to-list 'dabbrev-ignored-buffer-regexps "\\` ")
+  (add-to-list 'dabbrev-ignored-buffer-modes 'authinfo-mode)
+  (add-to-list 'dabbrev-ignored-buffer-modes 'doc-view-mode)
+  (add-to-list 'dabbrev-ignored-buffer-modes 'pdf-view-mode)
+  (add-to-list 'dabbrev-ignored-buffer-modes 'tags-table-mode))
 
 (use-package org
   :ensure nil

@@ -4,8 +4,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(ace-window ag auto-package-update avy consult
-                consult-lsp corfu corfu-terminal embark embark-consult
+   '(ace-window ag auto-package-update avy cape consult consult-lsp corfu
+                corfu-terminal embark embark-consult
                 exec-path-from-shell flycheck git-gutter jq-mode
                 lsp-mode lsp-pyright magit marginalia monokai-theme
                 multi-line multiple-cursors mustache-mode orderless
