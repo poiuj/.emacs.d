@@ -26,8 +26,7 @@
 
 (use-package which-key
   :ensure nil
-  :config
-  (which-key-mode 1))
+  :custom (which-key-mode t))
 
 ;;; Inspired by https://github.com/mickeynp/combobulate
 (use-package treesit
@@ -95,7 +94,7 @@
   :defer t
   :after corfu
   :unless (display-graphic-p (selected-frame))
-  :config (corfu-terminal-mode 1))
+  :custom (corfu-terminal-mode t))
 
 (use-package cape
   :bind ("C-c p" . cape-prefix-map)
@@ -171,9 +170,9 @@
 (use-package yasnippet-snippets)
 
 (use-package yasnippet
+  :hook (prog-mode . yas-minor-mode)
   :config
-  (yas-reload-all)
-  :hook (prog-mode . yas-minor-mode))
+  (yas-reload-all))
 
 (use-package vertico
   :init
@@ -320,8 +319,7 @@
   ;; requires to configure the terminal emulator accordingly.
   (define-key input-decode-map "\e[100~" (kbd "C-."))
   (define-key input-decode-map "\e[101~" (kbd "C-;"))
-  (define-key input-decode-map "\e[102~" (kbd "C-,"))
-)
+  (define-key input-decode-map "\e[102~" (kbd "C-,")))
 
 (use-package emacs
   :ensure nil
