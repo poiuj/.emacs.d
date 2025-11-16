@@ -1,7 +1,7 @@
 (require 'package)
 
 (add-to-list 'package-archives
-	     '("melpa" . "https://melpa.org/packages/") t)
+             '("melpa" . "https://melpa.org/packages/") t)
 
 (setq package-archive-priorities
       '(("gnu" . 1)
@@ -162,10 +162,10 @@
 (use-package flyspell
   :ensure nil
   :bind (:map flyspell-mode-map
-         ;; Unbind keys that conflict with embark
-         ("C-," . nil)
-         ("C-;" . nil)
-         ("C-." . nil))
+              ;; Unbind keys that conflict with embark
+              ("C-," . nil)
+              ("C-;" . nil)
+              ("C-." . nil))
   :hook
   (text-mode
    (prog-mode . flyspell-prog-mode)))
