@@ -174,6 +174,11 @@
   :config
   (yas-reload-all))
 
+(use-package yasnippet-capf
+  :after cape
+  :config
+  (add-to-list 'completion-at-point-functions #'yasnippet-capf))
+
 (use-package vertico
   :init
   (vertico-mode))
