@@ -158,14 +158,13 @@
 
 (use-package flyspell
   :ensure nil
-  :bind (:map flyspell-mode-map
-              ;; Unbind keys that conflict with embark
-              ("C-," . nil)
-              ("C-;" . nil)
-              ("C-." . nil))
   :hook
   (text-mode
-   (prog-mode . flyspell-prog-mode)))
+   (prog-mode . flyspell-prog-mode))
+  :config
+  (unbind-key "C-," flyspell-mode-map)
+  (unbind-key "C-;" flyspell-mode-map)
+  (unbind-key "C-." flyspell-mode-map))
 
 (use-package yasnippet-snippets)
 
