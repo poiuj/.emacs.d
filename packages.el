@@ -325,6 +325,9 @@
   (define-key input-decode-map "\e[101~" (kbd "C-;"))
   (define-key input-decode-map "\e[102~" (kbd "C-,")))
 
+(use-package ruby-end
+  :hook ruby-mode)
+
 (use-package emacs
   :ensure nil
   :if (eq system-type 'darwin)

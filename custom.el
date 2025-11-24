@@ -8,8 +8,9 @@
                 embark-consult exec-path-from-shell flycheck
                 git-gutter jq-mode lsp-pyright magit marginalia
                 monokai-theme multi-line multiple-cursors
-                mustache-mode orderless paredit rustic typescript-mode
-                vertico yasnippet-capf yasnippet-snippets)))
+                mustache-mode orderless paredit ruby-end rustic
+                typescript-mode vertico yasnippet-capf
+                yasnippet-snippets)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

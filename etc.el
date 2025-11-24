@@ -45,6 +45,3 @@
 
 ;; do not add coding line in ruby files
 (setq ruby-insert-encoding-magic-comment nil)
-
-;; use ruby-end mode
-(add-hook 'ruby-mode-hook (lambda () (ruby-end-mode 1)))
