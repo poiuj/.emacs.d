@@ -42,6 +42,3 @@
 
 ;; indent java
 (add-hook 'java-mode-hook (lambda () (c-set-offset 'arglist-intro '++)))
-
-;; do not add coding line in ruby files
-(setq ruby-insert-encoding-magic-comment nil)

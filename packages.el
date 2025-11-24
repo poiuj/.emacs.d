@@ -325,6 +325,11 @@
   (define-key input-decode-map "\e[101~" (kbd "C-;"))
   (define-key input-decode-map "\e[102~" (kbd "C-,")))
 
+(use-package ruby-mode
+  :ensure nil
+  :custom
+  (ruby-insert-encoding-magic-comment nil))
+
 (use-package ruby-end
   :hook ruby-mode)
 
