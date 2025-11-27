@@ -51,8 +51,9 @@
       (backward-sexp)
       (upcase-region (point) end))))
 
-(cl-defun my/adjust-font-size (&optional (frame (selected-frame)))
-  (let* ((attrs (frame-monitor-attributes frame))
+(defun my/adjust-font-size (frame)
+  (let* ((frame (or frame (selected-frame)))
+	 (attrs (frame-monitor-attributes frame))
          (width (nth 2 (alist-get 'geometry attrs)))
          (size (cond
                 ((eq width 1280) 18)
