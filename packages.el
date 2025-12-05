@@ -203,7 +203,7 @@
          ([remap imenu] . consult-imenu)
          ("C-c c l" . consult-line)
          ("C-c c d" . consult-find)
-         ("C-c c r" . consult-grep)
+         ("C-c c r" . consult-ripgrep)
          ("C-c c g" . consult-git-grep)
          ("C-c c m" . consult-mark)))
 
