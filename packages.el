@@ -113,8 +113,6 @@
 
 (use-package org
   :ensure nil
-  :custom
-  (org-agenda-start-on-weekday 0)
   :bind
   (:map org-mode-map
         ("C-c a" . org-agenda))
