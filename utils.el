@@ -56,7 +56,7 @@
 	 (attrs (frame-monitor-attributes frame))
          (width (nth 2 (alist-get 'geometry attrs)))
          (size (cond
-                ((eq width 1280) 18)
-                ((eq width 1512) 20)
-                (t 22))))
+                ((eq width 2560) 18)
+                ((eq width 3840) 28)
+                (t 20))))
     (set-frame-font (format "Monaco %s" size))))
