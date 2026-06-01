@@ -331,6 +331,8 @@
 (use-package ruby-end
   :hook ruby-mode)
 
+(use-package protobuf-mode)
+
 (use-package emacs
   :ensure nil
   :if (eq system-type 'darwin)
