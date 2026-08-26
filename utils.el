@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (defun my/clean-and-indent-buffer ()
   "Clean and indent current buffer"
   (interactive)

@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (dolist (file '(
                 "utils.el"
                 "packages.el"

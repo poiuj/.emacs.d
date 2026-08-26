@@ -1,4 +1,4 @@
-;;; various options
+;;; various options  -*- lexical-binding: t; -*-
 
 ;;; frame appearance
 (when (window-system)
