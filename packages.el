@@ -296,6 +296,7 @@
   ([remap isearch-forward] . isearch-forward-regexp)
   ([remap isearch-backward] . isearch-backward-regexp)
   ([remap query-replace] . query-replace-regexp)
+  ([remap list-buffers] . ibuffer)
 
   ("C-^" . enlarge-window)
   ("C-}" . enlarge-window-horizontally)
