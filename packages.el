@@ -92,12 +92,6 @@
   :hook
   (corfu-mode . corfu-popupinfo-mode))
 
-(use-package corfu-terminal
-  :defer t
-  :after corfu
-  :unless (display-graphic-p (selected-frame))
-  :custom (corfu-terminal-mode t))
-
 (use-package cape
   :bind ("C-c p" . cape-prefix-map)
   :init
