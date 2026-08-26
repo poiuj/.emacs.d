@@ -316,6 +316,9 @@
   (read-extended-command-predicate #'command-completion-default-include-p)
   (read-file-name-completion-ignore-case t)
 
+  ;; disable TLS 1.0 and 1.1
+  (gnutls-algorithm-priority "NORMAL:-VERS-TLS1.1:-VERS-TLS1.0")
+
   :config
   ;; Make the following shortcuts work over a terminal. To work it
   ;; requires to configure the terminal emulator accordingly.

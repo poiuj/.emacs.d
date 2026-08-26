@@ -3,7 +3,6 @@
                 "packages.el"
                 "etc.el"
                 "style.el"
-                "security.el"
                 ))
   (load-file (expand-file-name file user-emacs-directory)))
 
