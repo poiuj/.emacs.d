@@ -30,23 +30,6 @@
   :ensure nil
   :custom (which-key-mode t))
 
-;;; Inspired by https://github.com/mickeynp/combobulate
-(use-package treesit
-  :ensure nil
-  :preface
-  (setq my/ts-grammars-config
-        '(((c . ("https://github.com/tree-sitter/tree-sitter-c" "v0.20.7")) . (c-mode . c-ts-mode))
-          ((cpp . ("https://github.com/tree-sitter/tree-sitter-cpp" "v0.22.3")) . (c++-mode . c++-ts-mode))))
-  (defun my/setup-ts-modes ()
-    (dolist (config my/ts-grammars-config)
-      (cl-destructuring-bind (grammar . mode-remap) config
-        (unless (treesit-language-available-p (car grammar))
-          (add-to-list 'treesit-language-source-alist grammar)
-          (treesit-install-language-grammar (car grammar)))
-        (add-to-list 'major-mode-remap-alist mode-remap))))
-  :config
-  (my/setup-ts-modes))
-
 (use-package magit
   :bind ("C-c m" . magit-status))
 
@@ -309,6 +292,7 @@
   ("C-c n" . my/clean-and-indent-buffer)
 
   :custom
+  (treesit-enabled-modes t)
   (tab-always-indent 'complete)
   (text-mode-ispell-word-completion nil)
   (read-extended-command-predicate #'command-completion-default-include-p)
