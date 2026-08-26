@@ -188,8 +188,6 @@
   :init
   (marginalia-mode))
 
-(use-package ag)
-
 (use-package consult
   :bind (([remap switch-to-buffer] . consult-buffer)
          ([remap switch-to-buffer-other-window] . consult-buffer-other-window)
@@ -282,6 +280,9 @@
 
 (use-package ace-window
   :bind ("M-o" . ace-window))
+
+(use-package markdown-mode)
+(use-package markdown-mermaid)
 
 ;;; global stuff
 (use-package emacs
