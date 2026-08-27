@@ -131,7 +131,9 @@
 
 (use-package multi-line)
 
-(use-package monokai-theme)
+(use-package monokai-pro-theme
+  :config
+  (load-theme 'monokai-pro t))
 
 (use-package flyspell
   :ensure nil

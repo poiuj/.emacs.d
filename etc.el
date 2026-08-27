@@ -10,7 +10,6 @@
 
 (setq inhibit-startup-screen +1)
 
-(load-theme 'monokai t)
 (add-hook 'window-size-change-functions #'my/adjust-font-size)
 
 ;;; scroll
