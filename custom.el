@@ -6,12 +6,12 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(ace-window auto-package-update cape consult-lsp corfu-terminal
-                embark-consult exec-path-from-shell flycheck
-                git-gutter jq-mode lsp-pyright magit marginalia
-                markdown-mermaid monokai-pro-theme multi-line
-                multiple-cursors mustache-mode orderless paredit
-                ruby-end rustic typescript-mode vertico yasnippet-capf
+   '(ace-window cape consult-lsp corfu-terminal embark-consult
+                exec-path-from-shell flycheck git-gutter jq-mode
+                lsp-pyright magit marginalia markdown-mermaid
+                monokai-pro-theme multi-line multiple-cursors
+                mustache-mode orderless paredit ruby-end rustic
+                typescript-mode vertico yasnippet-capf
                 yasnippet-snippets)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
